@@ -1,16 +1,22 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { USER_API_END_POINT } from '../utils/instance';
+import { useDispatch } from 'react-redux';
+import { getuser } from '../Home/store/userSlice';
+
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [contact, setcontact] = useState('');
+  const [phoneNumber, setphoneNumber] = useState('');
   const [otp, setOtp] = useState('');
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
  const naviget = useNavigate();
+ const Dispatch = useDispatch()
+
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -25,25 +31,34 @@ const Register = () => {
   };
 
   const handleMobileChange = (e) => {
-    setcontact(e.target.value);
+    setphoneNumber(e.target.value);
   };
 
   const handleOtpChange = (e) => {
     setOtp(e.target.value);
   };
 
-  const handleSendOtp = () => {
-    // Your logic to send OTP via SMS or Email
-    setIsOtpSent(true);
+  const handleSendOtp = async () => {
+    try {
+      const {data} = await axios.post(`${USER_API_END_POINT}/user/send-otp`, { phoneNumber });
+      console.log("data" ,data);
+      setIsOtpSent(true);
+    } catch (error) {
+      console.log("OTP Sended :", error);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/user/signup", {
-        name, email, contact, password
+      console.log("hii buddy")
+      const response = await axios.post(`${USER_API_END_POINT}/user/signup`, {
+        name, email, phoneNumber, password, otp
       })
-      if(response.status === 201){
+      Dispatch(getuser(response?.data?.user))
+      localStorage.setItem("user", JSON.stringify(response.data));
+
+      if (response.status === 201) {
         setIsRegistered(true)
         console.log("registration successfull");
         naviget('/')
@@ -54,7 +69,7 @@ const Register = () => {
     setIsRegistered(true);
     console.log('Registration Details:', { name, email, password, contact });
   };
-
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 mt-20 pt-20">
       <div className="max-w-md w-full bg-white p-8 rounded shadow-lg">
@@ -104,7 +119,7 @@ const Register = () => {
                 id="contact"
                 className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-indigo-500"
                 placeholder="Enter your mobile number"
-                value={contact}
+                value={phoneNumber}
                 onChange={handleMobileChange}
                 required
               />

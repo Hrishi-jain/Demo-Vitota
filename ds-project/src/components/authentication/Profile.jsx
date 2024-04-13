@@ -10,7 +10,7 @@ const ProfileSection = () => {
 
   return (
     <>
-      <div className='w-full h-[100px] bg-red-200 relative px-20 flex items-center justify-between mt-40 pt-30'>
+      <div className='w-full h-[100px] bg-blue-300 relative px-20 flex items-center justify-between mt-40 pt-30'>
         <p className='text-lg font-bold'>Profile</p>
         <div className="text-lg">
           <NavLink className={(e) => (e.isActive ? "text-black font-bold text-lg" : "text-black text-lg")} to="/">Home</NavLink>
@@ -41,7 +41,7 @@ const ProfileSection = () => {
                 <ul className="space-y-3 ">
                   <li onClick={() => handleSectionClick('Account Information')} className="cursor-pointer hover:text-blue-500">Account Information</li>
                   <li onClick={() => handleSectionClick('My Orders')} className="cursor-pointer hover:text-blue-500">My Orders</li>
-                  <li onClick={() => handleSectionClick('My Stuff')} className="cursor-pointer hover:text-blue-500">My Stuff</li>
+                  <li onClick={() => handleSectionClick('My Wishlist')} className="cursor-pointer hover:text-blue-500">My Wishlist</li>
                   <li onClick={() => handleSectionClick('Logout')} className="cursor-pointer hover:text-blue-500">Logout</li>
                 </ul>
               </div>
@@ -68,9 +68,9 @@ const ProfileSection = () => {
                       {/* Display My Orders */}
                     </div>
                   )}
-                  {selectedSection === 'My Stuff' && (
+                  {selectedSection === 'My Wishlist' && (
                     <div className="mt-2 max-w-xl text-sm pt-5 text-gray-500">
-                        <h3>Here is the Hottest Stuff</h3>
+                        <h3>Here is the Hottest Wishlist</h3>
                       {/* Display My Stuff */}
                     </div>
                   )}

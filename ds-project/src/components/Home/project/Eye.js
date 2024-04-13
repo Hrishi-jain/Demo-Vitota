@@ -17,12 +17,14 @@ const EyeProducts = [
       ],
       category: 'EyeShadow',
       description:"lorem 10"
+      
     },
     {
       id: 'BrownDefiner',
       name: ' Brown BrownDefiner',
       price:"250",
       image:[
+        
         {
           imagemod1:"https://aqualogica.in/cdn/shop/files/1_2e1f8699-985a-4264-9ebe-d63252fcfb91.jpg?v=1702031696&width=1024",
           imagemod2:"https://media.karousell.com/media/photos/products/2023/9/17/bioderma_sensibio_micellar_wat_1694954320_d8496c37_progressive_thumbnail.jpg",

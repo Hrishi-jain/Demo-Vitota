@@ -1,16 +1,64 @@
 const mongoose = require("mongoose");
 
-const ProductSchema = new mongoose.connect({
-  name: {
-    type: String,
-    required: true,
+const ProductSchema = new mongoose.Schema({
+
+  title: {
+    type: String
   },
 
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  },
+  
   price: {
     type: Number,
     required: true,
   },
-  image: String,
-  Descprition: String,
+  Description: String,
+
+  discountedPrice: {
+    type: Number,
+  },
+
+  discountepersent: {
+    type: Number,
+  },
+
+  quantity: {
+    type: Number,
+  },
+
+  brand: {
+    type: String
+  },
+
+
+  image: {
+    type: String
+  },
+
+  ratings: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "ratings"
+  }],
+
+  reviews: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "reviews"
+  }],
+
+  numRatings: {
+    type:Number,
+    default:0
+  },
+
+  category: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "categories"
+  }],
+
 });
-module.exports = mongoose.model("Product", ProductSchema);
+const   product =   mongoose.model("Product", ProductSchema);
+
+module.exports = product

@@ -1,49 +1,37 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { USER_API_END_POINT } from '../utils/instance';
+import { getuser } from '../Home/store/userSlice';
+import { useDispatch } from "react-redux";
+
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+
+  
   const handleSignIn = async () => {
-    if (!email || !password) {
-      setError('Please enter both email and password.');
-      return;
-    }
-    if(password.length < 8 || password.length > 20) {
-      setError('Password must be between 8 and 20 characters.');
-      return;
-    }
-
-    if (!validateEmail(email)) {
-      setError('Please enter a valid email address.');
-      return;
-    }
-    
-
-    
-
     try {
-      const response = await axios.post('/user/signin', { email, password });
-      const userData = response.data; // Assuming the response includes user data
-      // Storing user data in local storage
-      // localStorage.setItem('userData', JSON.stringify(userData));
+      const response = await axios.post(`${USER_API_END_POINT}/user/signin`, {
+        email,
+        password,
+      });
+      console.log("USER DETAILS", response);
+      dispatch(getuser(response?.data?.user));
       console.log("hogyaa login");
-      navigate('/');
+      navigate("/");
+      localStorage.setItem("user", JSON.stringify(response.data));
+
     } catch (err) {
       setError(err.response);
+      navigate("/login");
     }
   };
-
-  const validateEmail = (email) => {
-    // Basic email validation regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   return (
     <div className="flex justify-center items-center h-screen bg-gray-200 mt-20 pt-20">
       <div className="bg-white p-8 rounded shadow-md w-80">

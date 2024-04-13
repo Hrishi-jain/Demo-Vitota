@@ -2,8 +2,6 @@ import React,{useState, useEffect } from 'react'
 import axios from 'axios';
 import Footer from './components/Footer'
 import Header from './components/Header'
-// prsh
-// import Routess from './components/routt addes/Routess'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Home from './components/Home/Home'
 import About from './components/pages/About'
@@ -56,7 +54,6 @@ const App = () => {
               setLoading(false);
           }
       }
-
       fetchData();
   }, []);
   return (

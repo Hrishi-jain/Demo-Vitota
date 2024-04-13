@@ -33,39 +33,39 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-capitalize flex flex-col text-white text-center py-6 w-full md:w-[15%] h-[100%]">
-          <h1 class="my-3 block font-bold text-lg">MAIN MENU</h1>
-          <a href="" class="my-3 block">Home</a>
-          <a href="" class="my-3 block">Search</a>
-          <a href="" class="my-3 block">Privicy Policy</a>
-          <a href="" class="my-3 block">Shipping Info</a>
-          <a href="" class="my-3 block">Latest News</a>
-          <a href="" class="my-3 block">Catalog</a>
+          <h1 className="my-3 block font-bold text-lg">MAIN MENU</h1>
+          <a href="" className="my-3 block">Home</a>
+          <a href="" className="my-3 block">Search</a>
+          <a href="" className="my-3 block">Privicy Policy</a>
+          <a href="" className="my-3 block">Shipping Info</a>
+          <a href="" className="my-3 block">Latest News</a>
+          <a href="" className="my-3 block">Catalog</a>
         </div>
         <div className="text-capitalize flex flex-col text-white text-center py-6 w-full md:w-[15%] h-[100%]">
-          <h1 class="my-3 block font-bold text-lg">QUICK VIEW</h1>
-          <a href="" class="my-3 block">Best Product</a>
-          <a href="" class="my-3 block">Cosmetics</a>
-          <a href="" class="my-3 block">Beauty World</a>
-          <a href="" class="my-3 block">Offer Collection</a>
-          <a href="" class="my-3 block">Mega Collection</a>
-          <a href="" class="my-3 block">Training Collection</a>
+          <h1 className="my-3 block font-bold text-lg">QUICK VIEW</h1>
+          <a href="" className="my-3 block">Best Product</a>
+          <a href="" className="my-3 block">Cosmetics</a>
+          <a href="" className="my-3 block">Beauty World</a>
+          <a href="" className="my-3 block">Offer Collection</a>
+          <a href="" className="my-3 block">Mega Collection</a>
+          <a href="" className="my-3 block">Training Collection</a>
         </div>
         <div className="text-capitalize flex flex-col text-white text-center py-6 w-full md:w-[15%] h-[100%]">
-          <h1 class="my-3 block font-bold text-lg">LINKS</h1>
-          <a href="" class="my-3 block">About Us</a>
-          <a href="" class="my-3 block">Contact Us</a>
-          <a href="" class="my-3 block">Faq</a>
-          <a href="" class="my-3 block">Portfolio</a>
-          <a href="" class="my-3 block">Search</a>
-          <a href="" class="my-3 block">Wishlist</a>
-          <a href="" class="my-3 block">Lookbook</a>
+          <h1 className="my-3 block font-bold text-lg">LINKS</h1>
+          <a href="" className="my-3 block">About Us</a>
+          <a href="" className="my-3 block">Contact Us</a>
+          <a href="" className="my-3 block">Faq</a>
+          <a href="" className="my-3 block">Portfolio</a>
+          <a href="" className="my-3 block">Search</a>
+          <a href="" className="my-3 block">Wishlist</a>
+          <a href="" className="my-3 block">Lookbook</a>
         </div> 
         <div className="text-capitalize flex flex-col text-white text-center py-6 w-full md:w-[15%] h-[100%]">
           <h1 className='font-bold text-lg'>STORE INFO</h1>
-          <a href="" class="my-3 block"><IoLocationOutline className='inline-block' />   Vitota Beauty Store  <br /> Bhopal India</a>
-          <a href="" class="my-3 block"><IoCall className='inline-block' /> Call Us: +918319384910</a>
-          <a href="" class="my-3 block"><MdOutlineEmail className='inline-block' /> Email Us: <br /> support@vitota.in</a>
-          <a href="" class="my-3 block"><LiaFaxSolid className='inline-block' /> Fax: 7582908615</a>
+          <a href="" className="my-3 block"><IoLocationOutline className='inline-block' />   Vitota Beauty Store  <br /> Bhopal India</a>
+          <a href="" className="my-3 block"><IoCall className='inline-block' /> Call Us: +918319384910</a>
+          <a href="" className="my-3 block"><MdOutlineEmail className='inline-block' /> Email Us: <br /> support@vitota.in</a>
+          <a href="" className="my-3 block"><LiaFaxSolid className='inline-block' /> Fax: 7582908615</a>
         </div>
         <div className="absolute right-6 bottom-10 p-4 bg-red-400 rounded-full border-4 border-white"><a href=""><MdKeyboardDoubleArrowUp /></a></div>
       </div>
